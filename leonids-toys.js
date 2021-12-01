@@ -74,4 +74,30 @@ for (const toy of toys) {
     console.log(`The price of ${toy.name} costs $${toy.price} dollars. The price increased by 5% from the original price.`)
 }
 
+const jumprope = {
+    name: "Jumprope",
+    maker: "Ropeland",
+    color: "green",
+    size: 5, 
+    weight: 1,
+    price: .50
+}
+
+const addToyToInventory = (toyObject) => {
+    const lastIndex = toys.length - 1
+    const currentLastToy = toys[lastIndex]
+    const maxId = currentLastToy.id 
+    const idForNewToy = maxId + 1
+
+    toyObject.id = idForNewToy
+    toys.push(toyObject)
+}
+addToyToInventory(jumprope)
+
+// Display all the toys
+for (const toy of toys) {
+    console.log(`The ${toy.maker} ${toy.name} costs ${toy.price} dollars. It is a ${toy.color} color.`)
+}
+
+console.log(toys)
 

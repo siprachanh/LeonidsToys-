@@ -75,3 +75,34 @@ for (const phone of phones) {
         console.log(`The ${phone.maker} ${phone.name} costs ${phone.price} dollars. It weighs ${phone.weight} grams.`)
     }
 }
+// Inventory Purchase Function Chpt
+
+const pixel = {
+    name: "Pixel",
+    maker: "Google",
+    operatingSystem: "Android",
+    price: 399,
+    weight: 1.2
+}
+
+const addPhoneToInventory = (phoneObject) => {
+    const lastIndex = phones.length - 1
+    const currentLastPhone = phones[lastIndex]
+    const maxId = currentLastPhone.id
+    const idForNewPhone = maxId + 1
+
+    phoneObject.id = idForNewPhone
+    phones.push(phoneObject)
+}
+
+// Now that fn is defined, you can invoke it and put a value in the parenthesis (ie, the argument).
+// The object will be stored in the 'phoneObject' parameter for use in the fn.
+
+addPhoneToInventory(pixel)
+
+// Display all the phones
+for (const phone of phones) {
+    console.log(`The ${phone.maker} ${phone.name} costs ${phone.price} dollars. It weighs ${phone.weight} grams.`)
+}
+
+console.log(phones)
